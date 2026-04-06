@@ -54,11 +54,11 @@ Error (400):
 **Description:** Upload course content and trigger knowledge base ingestion
 
 Headers:
-```json
+```
 Content-Type: multipart/form-data
 ```
 Request Body:
-```json
+```
 file (binary)
 ```
 Response (200):
