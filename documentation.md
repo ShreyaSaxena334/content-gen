@@ -1,3 +1,34 @@
+# Overview
+
+Content-Gen is a cloud-native learning assistant platform that enables trainers to create structured courses and allows learners to interact with course content using AI-powered tools such as chat, mind maps, and flashcards.
+
+The system leverages AWS services for scalability, serverless execution, and AI-driven responses.
+
+---
+
+# Tech Stack
+
+## Backend (AWS)
+- AWS Lambda
+- Amazon API Gateway
+- Amazon S3
+- Amazon DynamoDB
+- Amazon Bedrock (Knowledge Bases + AgentCore)
+
+## Frontend
+- React + Vite
+
+---
+
+# API Specification
+
+## Base URL
+- <>
+
+---
+
+## API Endpoints
+
 **1. GET /course**
 
 **Description:** Retrieve all courses
