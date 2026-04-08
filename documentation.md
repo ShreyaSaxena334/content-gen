@@ -3,9 +3,12 @@
 
 ## Overview
 
-Content-Gen is a serverless platform for creating and interacting with course-based knowledge. Trainers can upload resources, which are automatically processed into a searchable knowledge base. Learners can then query the content, generate summaries, mind maps, and flashcards.
+Trainers are required to support learners even after training sessions, often through manual follow-ups. Learners, on the other hand, find it difficult to navigate recorded sessions and access focused or personalized content.
 
-Built on Amazon Web Services, it delivers a scalable, event-driven backend with minimal infrastructure management.
+Content-Gen addresses this by enabling trainers to upload course resources that are automatically transformed into a searchable knowledge base. Learners can then query the content and generate summaries, mind maps, and flashcards.
+
+Built on Amazon Web Services, the platform provides a scalable, event-driven solution with minimal infrastructure management.
+
 
 ---
 
@@ -15,12 +18,12 @@ Content-Gen follows a serverless, event-driven architecture:
 
 ### Flow:
 ```
-UI (React) → Amazon API Gateway → AWS Lambda → Amazon Bedrock → Response → UI
+UI (React via Amplify) → Amazon API Gateway → AWS Lambda → Amazon Bedrock → Response → UI
 ```
 
 ### Core Components
 **Frontend**
-- React + Vite UI for trainers and learners
+- React + Vite UI deployed on AWS Amplify for hosting and delivery
   
 **API Layer**
 - Amazon API Gateway handles all incoming requests and routes them to appropriate services
@@ -33,9 +36,10 @@ UI (React) → Amazon API Gateway → AWS Lambda → Amazon Bedrock → Response
 - Amazon S3 stores uploaded sources, summaries, and generated artifacts
   
 **LLM and Retrieval Layer**
-- Amazon Bedrock for LLM inference
-- Bedrock Knowledge Base for retrieval
-- AgentCore for orchestration & response generation
+- Amazon Bedrock for model inference using Amazon Nova-Pro
+- Bedrock Knowledge Base for context retrieval from ingested sources
+- AgentCore for orchestration, integrated with Strands Agent
+- Short-term conversational memory managed via AgentCore memory for contextual interactions
 
 ### System Architecture Diagram
 ![WhatsApp Image 2026-04-08 at 12 05 30 PM](https://github.com/user-attachments/assets/a6913be7-57c8-4727-920c-d0eba26363aa)
